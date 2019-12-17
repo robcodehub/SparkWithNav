@@ -1,7 +1,7 @@
 import { Navigation } from "react-native-navigation";
 
 //import { AppRegistry } from 'react-native'; //DELETED IN DEMO
-import ViroNew from './App.js/index.js
+import ViroNew from './App.js/index.js'
 
 //AppRegistry.registerComponent('ViroSample', () => App);
 
