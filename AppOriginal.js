@@ -8,9 +8,6 @@
  */
 
 import React, { Component } from 'react';
-
-import { Navigation } from 'react-native-navigation';
-
 import {
   AppRegistry,
   Text,
@@ -44,59 +41,9 @@ const AR_NAVIGATOR_TYPE = "AR";
 // be presented with a choice of AR or VR. By default, we offer the user a choice.
 const defaultNavigatorType = UNSET;
 
-export default class ViroNew extends Component {
+export default class ViroSample extends Component {
   constructor() {
     super();
-    Navigation.events().registerAppLaunchedListener(() => {
-      // Each time the event is received we should call Navigation.setRoot
-
-
-      Navigation.setRoot({
-        root: {
-          bottomTabs: {
-            children: [{
-              stack: {
-                children: [{
-                  component: {
-                    name: 'example.FirstTabScreen',
-                    passProps: {
-                      text: 'This is tab 1'
-                    }
-                  }
-                }],
-                options: {
-                  bottomTab: {
-                    text: 'Tab 1',
-                    icon: require('./js/res/fsa/Facebook-icon.png'),
-                    testID: 'FIRST_TAB_BAR_BUTTON'
-                  }
-                }
-              }
-            },
-            {
-              component: {
-                name: 'navigation.playground.TextScreen',
-                passProps: {
-                  text: 'This is tab 2'
-                },
-                options: {
-                  bottomTab: {
-                    text: 'Tab 2',
-                    icon: require('./js/res/fsa/email-icon.png'),
-                    testID: 'SECOND_TAB_BAR_BUTTON'
-                  }
-                }
-              }
-            }]
-          }
-        }
-      });
-
-
-
-    });
-
-
 
     this.state = {
       navigatorType : defaultNavigatorType,
@@ -135,7 +82,7 @@ export default class ViroNew extends Component {
             onPress={this._getExperienceButtonOnPress(AR_NAVIGATOR_TYPE)}
             underlayColor={'#68a0ff'} >
 
-            <Text style={localStyles.buttonText}>AR NAV</Text>
+            <Text style={localStyles.buttonText}>AR Experience</Text>
           </TouchableHighlight>
 
         </View>
@@ -232,4 +179,4 @@ let localStyles = StyleSheet.create({
   }
 });
 
-module.exports = ViroNew
+module.exports = ViroSample
